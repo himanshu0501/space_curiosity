@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:space_curiosity/models/model.dart';
 import 'package:space_curiosity/widgets/drawer.dart';
 
-class HomePage extends StatelessWidget {
+import '../widgets/item_widget.dart';
+
+class HomeP age extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -11,10 +14,15 @@ class HomePage extends StatelessWidget {
           // it gives the bar of App
           title: Text("Space Curiosity"), // the name of App at the top
         ),
-        body: Center(
-          // it is same as the HTML body
-          child: Container(
-            child: Text('welcome'),
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: ListView.builder(
+            itemCount: Model.items.length,
+            itemBuilder: (context, index) {
+              return ItemWidget(
+                item: Model.items[index],
+              );
+            },
           ),
         ),
         drawer: MyDrawer(), // the side drawer is given here
