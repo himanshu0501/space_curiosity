@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:space_curiosity/pages/homepage.dart';
 import 'package:space_curiosity/pages/loginpage.dart';
+import 'package:space_curiosity/utils/routes.dart';
 
 void main() {
   runApp(space_curiosity());
@@ -30,13 +31,13 @@ class space_curiosity extends StatelessWidget {
         brightness: Brightness.dark,
         // dark theme will work only when we specifiy the Themedata and its properties
       ),
-      initialRoute: "/",
+      initialRoute: MyRoutes.homeRoute,
       // it tells which page will show in the start (by default "/" shows in the start)
       routes: {
         // defines the routes in the app
         "/": (context) => LoginPage(), // object starts with capital letter
-        "/login": (context) => LoginPage(),
-        "/home": (context) => HomePage(),
+        MyRoutes.loginRoute: (context) => LoginPage(),
+        MyRoutes.homeRoute: (context) => HomePage(),
         // either gave the home: or "/" route both at the same time will give error
       },
     );

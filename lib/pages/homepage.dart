@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:space_curiosity/widgets/drawer.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -16,7 +17,7 @@ class HomePage extends StatelessWidget {
             child: Text('welcome'),
           ),
         ),
-        drawer: Drawer(), // the side drawer is given here
+        drawer: MyDrawer(), // the side drawer is given here
       ),
     );
   }
