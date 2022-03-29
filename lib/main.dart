@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:space_curiosity/pages/homepage.dart';
 import 'package:space_curiosity/pages/loginpage.dart';
 
@@ -20,13 +21,16 @@ class space_curiosity extends StatelessWidget {
       //home: HomePage(),
       themeMode: ThemeMode.light, // specify the theme
       theme: ThemeData(
-          primarySwatch:
-              Colors.deepPurple), // it specify properties for light theme
-      darkTheme: ThemeData(
-        // dark theme will work only when we specifiy the Themedata and its properties
-        brightness: Brightness.dark,
+        primarySwatch: Colors.deepPurple,
+        // it specify properties for light theme
+        fontFamily: GoogleFonts.lato().fontFamily,
       ),
-      initialRoute: "/home",
+      // this will use the fonts of google
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        // dark theme will work only when we specifiy the Themedata and its properties
+      ),
+      initialRoute: "/",
       // it tells which page will show in the start (by default "/" shows in the start)
       routes: {
         // defines the routes in the app
@@ -40,4 +44,5 @@ class space_curiosity extends StatelessWidget {
   // classes are blueprint and there object always starts with captial letter
   // ctrl + . is used for wrapping in vscode
   // and alt + z is used for wrap of text in single page i.e if the text gets long horizontally then vscode auto correct the texts and them in newline so that every text comes in a single page.
+  // for comment in vscode use ctrl + /
 }
