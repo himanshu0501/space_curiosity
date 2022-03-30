@@ -7,7 +7,7 @@ import 'package:space_curiosity/utils/routes.dart';
 class MyDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final imageUrl =
+    const imageUrl =
         "https://i.pinimg.com/564x/77/5b/91/775b91d4b1bfcac2aa3292b47763c1b1.jpg";
     return Drawer(
       child: ListView(
