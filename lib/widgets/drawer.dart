@@ -24,19 +24,46 @@ class MyDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(
-              CupertinoIcons.home,
+              CupertinoIcons.photo_fill_on_rectangle_fill,
             ),
             title: Text(
-              "Home",
+              "Daily Nasa Pictures",
               textScaleFactor: 1.2,
             ),
           ),
           ListTile(
             leading: Icon(
-              CupertinoIcons.mail,
+              CupertinoIcons.rocket,
             ),
             title: Text(
-              "Email me",
+              "SpaceX launch Tracker",
+              textScaleFactor: 1.2,
+            ),
+          ),
+          ListTile(
+            leading: Icon(
+              CupertinoIcons.news,
+            ),
+            title: Text(
+              "Latest Space News",
+              textScaleFactor: 1.2,
+            ),
+          ),
+          ListTile(
+            leading: Icon(
+              CupertinoIcons.location,
+            ),
+            title: Text(
+              "ISS Tracker",
+              textScaleFactor: 1.2,
+            ),
+          ),
+          ListTile(
+            leading: Icon(
+              CupertinoIcons.number_circle_fill,
+            ),
+            title: Text(
+              "Weight Calculator",
               textScaleFactor: 1.2,
             ),
           ),
@@ -48,7 +75,7 @@ class MyDrawer extends StatelessWidget {
               "Log out",
               textScaleFactor: 1.2,
             ),
-          )
+          ),
         ],
       ),
     );

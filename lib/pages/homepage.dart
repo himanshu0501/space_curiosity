@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:space_curiosity/models/model.dart';
+import 'package:space_curiosity/pages/home_detail.dart';
 import 'package:space_curiosity/widgets/drawer.dart';
 import 'package:velocity_x/velocity_x.dart';
-import '../widgets/item_widget.dart';
 
 Color creamColor = Color(0xfff5f5f5);
 Color darkBluishColor = Color(0xff403b58);
@@ -23,14 +23,11 @@ class HomePage extends StatelessWidget {
               if (Model.items != null && Model.items.isNotEmpty)
                 ModelList().expand()
               else
-                Center(
-                  child: CircularProgressIndicator(),
-                )
+                CircularProgressIndicator().centered().expand(),
             ],
           ),
         ),
       ),
-      drawer: MyDrawer(),
     );
   }
 }
@@ -43,7 +40,16 @@ class ModelList extends StatelessWidget {
       itemCount: Model.items.length,
       itemBuilder: (context, index) {
         final value = Model.items[index];
-        return ModelItem(value: value);
+        return InkWell(
+            onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HomeDetailPage(
+                      value: value,
+                    ),
+                  ),
+                ),
+            child: ModelItem(value: value));
       },
     );
   }
@@ -68,7 +74,27 @@ class ModelItem extends StatelessWidget {
             .color(creamColor)
             .make()
             .p16()
-            .w40(context)
+            .w40(context),
+        Expanded(
+            child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            value.name.text.lg.color(darkBluishColor).bold.make(),
+            value.id.text.color(Colors.grey).make(),
+            10.heightBox,
+            ButtonBar(
+              alignment: MainAxisAlignment.spaceBetween,
+              buttonPadding: EdgeInsets.zero,
+              children: [
+                ElevatedButton(
+                  onPressed: () {},
+                  child: "Details".text.make(),
+                )
+              ],
+            ).pOnly(right: 8.0)
+          ],
+        ))
       ],
     )).white.rounded.square(150).make().py16();
   }

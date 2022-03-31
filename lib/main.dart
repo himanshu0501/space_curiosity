@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:space_curiosity/models/model.dart';
+import 'package:space_curiosity/pages/home_detail.dart';
 import 'package:space_curiosity/pages/homepage.dart';
 import 'package:space_curiosity/pages/loginpage.dart';
+import 'package:space_curiosity/pages/space_news.dart';
+import 'package:space_curiosity/pages/weight_calculator.dart';
 import 'package:space_curiosity/utils/routes.dart';
+import 'package:space_curiosity/widgets/drawer.dart';
 
 void main() {
   runApp(space_curiosity());
@@ -20,6 +25,7 @@ class space_curiosity extends StatelessWidget {
     // If UI need to refreshed we must call build.
     return MaterialApp(
       //home: HomePage(),
+      debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.light, // specify the theme
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
@@ -38,6 +44,9 @@ class space_curiosity extends StatelessWidget {
         "/": (context) => LoginPage(), // object starts with capital letter
         MyRoutes.loginRoute: (context) => LoginPage(),
         MyRoutes.homeRoute: (context) => HomePage(),
+        MyRoutes.drawer: (context) => MyDrawer(),
+        MyRoutes.news: (context) => SpaceNews(),
+        MyRoutes.calculator: (context) => Home(),
         // either gave the home: or "/" route both at the same time will give error
       },
     );
