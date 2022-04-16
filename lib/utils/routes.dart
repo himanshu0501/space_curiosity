@@ -5,4 +5,5 @@ class MyRoutes {
   static String drawer = "/drawer";
   static String news = '/news';
   static String calculator = '/calculator';
+  static String isstrack = '/track';
 }

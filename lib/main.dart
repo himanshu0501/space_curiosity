@@ -6,6 +6,7 @@ import 'package:space_curiosity/pages/homepage.dart';
 import 'package:space_curiosity/pages/loginpage.dart';
 import 'package:space_curiosity/pages/space_news.dart';
 import 'package:space_curiosity/pages/weight_calculator.dart';
+import 'package:space_curiosity/track.dart';
 import 'package:space_curiosity/utils/routes.dart';
 import 'package:space_curiosity/widgets/drawer.dart';
 
@@ -37,7 +38,7 @@ class space_curiosity extends StatelessWidget {
         brightness: Brightness.dark,
         // dark theme will work only when we specifiy the Themedata and its properties
       ),
-      initialRoute: MyRoutes.homeRoute,
+      initialRoute: MyRoutes.isstrack,
       // it tells which page will show in the start (by default "/" shows in the start)
       routes: {
         // defines the routes in the app
@@ -47,6 +48,7 @@ class space_curiosity extends StatelessWidget {
         MyRoutes.drawer: (context) => MyDrawer(),
         MyRoutes.news: (context) => SpaceNews(),
         MyRoutes.calculator: (context) => Home(),
+        MyRoutes.isstrack: (context) => IssTracker(),
         // either gave the home: or "/" route both at the same time will give error
       },
     );
